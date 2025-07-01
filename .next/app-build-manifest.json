@@ -6,11 +6,6 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
     "/3d-models/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -25,11 +20,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/3d-models/page.js"
-    ],
-    "/3d-models/categories/[categoryName]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/3d-models/categories/[categoryName]/page.js"
     ]
   }
 }

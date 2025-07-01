@@ -57,113 +57,135 @@ export default async function NewModelPage() {
   ];
 
   return (
-    <div className="container px-4 py-8 mx-auto max-w-2xl">
+    <div className="container px-4 py-8 mx-auto max-w-4xl">
+      {/* Header Section */}
       <div className="mb-8">
         <Link
           href="/3d-models"
-          className="text-blue-600 hover:text-blue-800 transition-colors"
+          className="inline-flex items-center text-gray-600 hover:text-gray-800 transition-colors mb-4"
         >
-          ← Back to All Models
+          <svg
+            className="w-4 h-4 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+          Back to All Models
         </Link>
-        <h1 className="text-3xl font-bold mt-4">Add New Model</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-4xl font-bold text-gray-800 mb-2">Add New Model</h1>
+        <p className="text-gray-600 text-lg">
           Share your 3D model with the community
         </p>
       </div>
 
-      <form action={handleCreateModel} className="space-y-6">
-        <div>
-          <label
-            htmlFor="title"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Model Title
-          </label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Enter model title..."
-          />
-        </div>
+      {/* Form Section */}
+      <div className="bg-white rounded-lg shadow-lg p-8">
+        <form action={handleCreateModel} className="space-y-6 -mt-6">
+          {/* Title Field */}
+          <div>
+            <label
+              htmlFor="title"
+              className="block text-sm font-semibold text-gray-800 mb-2"
+            >
+              Model Title *
+            </label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              required
+              className="w-full px-4 py-3 text-base border border-[#606060] rounded-lg focus:border-[#606060] focus:outline-none focus:ring-0 transition-colors"
+              placeholder="Enter model title..."
+            />
+          </div>
 
-        <div>
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Category
-          </label>
-          <select
-            id="category"
-            name="category"
-            required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="">Select a category...</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category
-                  .split('-')
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(' ')}
-              </option>
-            ))}
-          </select>
-        </div>
+          {/* Category Field */}
+          <div>
+            <label
+              htmlFor="category"
+              className="block text-sm font-semibold text-gray-800 mb-2"
+            >
+              Category *
+            </label>
+            <select
+              id="category"
+              name="category"
+              required
+              className="w-full px-4 py-3 text-base border border-[#606060] rounded-lg focus:border-[#606060] focus:outline-none focus:ring-0 transition-colors"
+            >
+              <option value="">Select a category...</option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category
+                    .split('-')
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ')}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        <div>
-          <label
-            htmlFor="description"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Description
-          </label>
-          <textarea
-            id="description"
-            name="description"
-            rows={4}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Describe your model..."
-          />
-        </div>
+          {/* Image URL Field */}
+          <div>
+            <label
+              htmlFor="image"
+              className="block text-sm font-semibold text-gray-800 mb-2"
+            >
+              Image URL
+            </label>
+            <p className="text-sm text-gray-500 mt-2">
+              Enter a direct link to an image of your model
+            </p>
+            <input
+              type="url"
+              id="image"
+              name="image"
+              className="w-full px-4 py-3 text-base border border-[#606060] rounded-lg focus:border-[#606060] focus:outline-none focus:ring-0 transition-colors"
+              placeholder="https://example.com/image.jpg"
+            />
+          </div>
 
-        <div>
-          <label
-            htmlFor="image"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Image URL
-          </label>
-          <input
-            type="url"
-            id="image"
-            name="image"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="https://example.com/image.jpg"
-          />
-          <p className="text-sm text-gray-500 mt-1">
-            Enter a direct link to an image of your model
-          </p>
-        </div>
+          {/* Description Field */}
+          <div>
+            <label
+              htmlFor="description"
+              className="block text-sm font-semibold text-gray-800 mb-2"
+            >
+              Description
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              rows={4}
+              className="w-full px-4 py-3 text-base border border-[#606060] rounded-lg focus:border-[#606060] focus:outline-none focus:ring-0 transition-colors resize-none"
+              placeholder="Describe your model..."
+            />
+          </div>
 
-        <div className="flex gap-4 pt-4">
-          <button
-            type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Upload Model
-          </button>
-          <Link
-            href="/3d-models"
-            className="px-6 py-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-          >
-            Cancel
-          </Link>
-        </div>
-      </form>
+          {/* Action Buttons */}
+          <div className="flex flex-col gap-4 pt-6 border-t border-gray-200 sm:flex-row sm:justify-end">
+            <button
+              type="submit"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-medium shadow-md hover:shadow-lg"
+            >
+              Upload Model
+            </button>
+            <Link
+              href="/3d-models"
+              className="px-6 py-3 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-200 text-center font-medium"
+            >
+              Cancel
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
