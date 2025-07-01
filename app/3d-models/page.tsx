@@ -6,7 +6,7 @@ import { getModels } from '@/app/lib/models';
 
 export default async function Page({ searchParams }: ModelsPageProps) {
   const models = await getModels();
-  const query = (await searchParams)?.query?.toLowerCase() || '';
+  const query = (await searchParams)?.q?.toLowerCase() || '';
 
   const filteredModels = query
     ? models.filter(
@@ -21,7 +21,7 @@ export default async function Page({ searchParams }: ModelsPageProps) {
       <Form action="/3d-models" className="w-full px-5 md:px-0 md:max-w-xl">
         <input
           type="text"
-          name="query"
+          name="q"
           placeholder="E.g. dragon"
           autoComplete="off"
           defaultValue={query}

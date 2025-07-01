@@ -1,4 +1,4 @@
-import type { Model, GetModelsParams, CreateModelParams } from '../types';
+import type { Model, GetModelsParams } from '../types';
 import supabase from './supabase/client';
 
 export async function getModels({ category }: GetModelsParams = {}): Promise<
