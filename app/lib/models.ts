@@ -32,7 +32,9 @@ export async function getModelById(id: string | number): Promise<Model> {
   return data;
 }
 
-export async function createModel(modelData: Model): Promise<Model> {
+export async function createModel(
+  modelData: Omit<Model, 'id'>
+): Promise<Model> {
   const { data, error } = await supabase
     .from('models')
     .insert([modelData])
