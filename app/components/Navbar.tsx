@@ -29,6 +29,7 @@ export default function Navbar() {
         </Link>
         <ul className="flex items-center gap-1.5">
           <NavLink href="/3d-models" isActive={pathname.startsWith("/3d-models")}>3D Models</NavLink>
+          <NavLink href="/3d-models/create" isActive={pathname.startsWith("/3d-models/create")}>Create</NavLink>
           <NavLink href="/about" isActive={pathname === "/about"}>About</NavLink>
         </ul>
       </nav>

@@ -1,0 +1,17 @@
+{
+  "node": {
+    "401976017a31e7b28af92422a9503bd75008b600f1": {
+      "workers": {
+        "app/3d-models/create/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2FJonathan%2FDesktop%2FCoding%2Flearnnext-js-section2end%2Fapp%2F3d-models%2Fcreate%2Fpage.tsx%22%2C%5B%7B%22id%22%3A%22401976017a31e7b28af92422a9503bd75008b600f1%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/3d-models/create/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "SE4k7zSLjTQrlURIoA0GuSQ6azc3Zmso2Gh0wl/qZ8U="
+}
