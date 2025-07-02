@@ -1,13 +1,13 @@
-"use client"
+'use client';
 
-import Link from "next/link"
-import NavLink from "@/app/components/NavLink"
-import { usePathname } from "next/navigation"
-import PFLogoIcon from "@/public/printforge-logo-icon.svg"
-import PFLogo from "@/public/printforge-logo.svg"
+import Link from 'next/link';
+import NavLink from '@/app/components/NavLink';
+import { usePathname } from 'next/navigation';
+import PFLogoIcon from '@/public/printforge-logo-icon.svg';
+import PFLogo from '@/public/printforge-logo.svg';
 
 export default function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
   return (
     <header className="w-full bg-white">
       <nav className="flex justify-between px-6 py-4 pr-2">
@@ -28,11 +28,27 @@ export default function Navbar() {
           </div>
         </Link>
         <ul className="flex items-center gap-1.5">
-          <NavLink href="/3d-models" isActive={pathname.startsWith("/3d-models")}>3D Models</NavLink>
-          <NavLink href="/3d-models/create" isActive={pathname.startsWith("/3d-models/create")}>Create</NavLink>
-          <NavLink href="/about" isActive={pathname === "/about"}>About</NavLink>
+          <NavLink
+            href="/3d-models"
+            isActive={
+              pathname === '/3d-models' ||
+              (pathname.startsWith('/3d-models/') &&
+                !pathname.startsWith('/3d-models/create'))
+            }
+          >
+            3D Models
+          </NavLink>
+          <NavLink
+            href="/3d-models/create"
+            isActive={pathname === '/3d-models/create'}
+          >
+            Create
+          </NavLink>
+          <NavLink href="/about" isActive={pathname === '/about'}>
+            About
+          </NavLink>
         </ul>
       </nav>
     </header>
-  )
+  );
 }
