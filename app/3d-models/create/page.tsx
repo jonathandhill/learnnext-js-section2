@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { createModel } from '@/app/lib/models';
 import type { Model } from '@/app/types';
+import FileUpload from '@/app/components/FileUpload';
 
 // Server Action to handle form submission
 async function handleCreateModel(formData: FormData) {
@@ -132,25 +133,13 @@ export default async function NewModelPage() {
             </select>
           </div>
 
-          {/* Image URL Field */}
-          <div>
-            <label
-              htmlFor="image"
-              className="block text-sm font-semibold text-gray-800 mb-2"
-            >
-              Image URL
-            </label>
-            <p className="text-sm text-gray-500 mt-2">
-              Enter a direct link to an image of your model
-            </p>
-            <input
-              type="url"
-              id="image"
-              name="image"
-              className="w-full px-4 py-3 text-base border border-[#606060] rounded-lg focus:border-[#606060] focus:outline-none focus:ring-0 transition-colors"
-              placeholder="https://example.com/image.jpg"
-            />
-          </div>
+          {/* Image Upload Field */}
+          <FileUpload
+            name="image"
+            id="image"
+            label="Model Image"
+            description="Upload an image of your model"
+          />
 
           {/* Description Field */}
           <div>

@@ -67,3 +67,10 @@ export type NavLinkProps = {
   children: ReactNode;
   isActive?: boolean;
 };
+
+export type FileUploadProps = {
+  name: string;
+  id: string;
+  label: string;
+  description?: string;
+};

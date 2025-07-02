@@ -14,7 +14,7 @@ export default async function ModelDetailPage({ params }: ModelDetailPageProps) 
         {/* Image Section */}
         <figure className="relative overflow-hidden rounded-lg shadow-lg aspect-square">
           <img
-            src={placeholderImg.src}
+            src={model.image || placeholderImg.src}
             alt={`3D model of ${model.name}`}
             className="absolute inset-0 object-cover w-full h-full"
           />
